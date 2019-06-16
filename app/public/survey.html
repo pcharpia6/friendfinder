@@ -346,9 +346,12 @@
                     $("#friend-name").text(data.name);
                     $("#picture").attr("src", data.picture);
                     $("#returnFriend").modal("toggle");
-                })
+                });
             } else{alert("Please input your name.")};
         });
+        $("#returnFriend").on('hidden.bs.modal', function () {
+            location.reload();
+        })
     });
     </script>
 </body>
