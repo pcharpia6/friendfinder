@@ -288,7 +288,7 @@
         <br>
         <hr>
         <br>
-        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+        <button style="margin-bottom:50px" type="submit" class="btn btn-primary" id="submit">Submit</button>
         <br><br>
     
     </form>
@@ -318,8 +318,6 @@
 
     <script type="text/javascript">
     $( document ).ready(function() {
-        console.log( "ready!" );
-
         var newP = function() {
                 // retrieve the input name
                 var name = $("input[id='name'").val().trim();
@@ -341,14 +339,15 @@
 
         $("#submit").on("click", function(event) {
             event.preventDefault();
-            $.post("/api/friends", newP()
-            ).done(
-            function(data) {
-                console.log(data.name);
-                $("#friend-name").text(data.name);
-                $("#picture").attr("src", data.picture);
-                $("#returnFriend").modal("toggle");
-            });
+            if ($("input[id='name'").val().trim()) {
+                $.post("/api/friends", newP()
+                ).done(
+                function(data) {
+                    $("#friend-name").text(data.name);
+                    $("#picture").attr("src", data.picture);
+                    $("#returnFriend").modal("toggle");
+                })
+            } else{alert("Please input your name.")};
         });
     });
     </script>

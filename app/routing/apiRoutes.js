@@ -7,8 +7,6 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
-        // console.log(req.body);
-        // console.log(friends.length);
         let inputVal = req.body.values
         let data;
 
@@ -18,7 +16,6 @@ module.exports = function(app) {
             compareReturn = [];
             for (let i = 0; i < friends.length; i++) {
                 let comparePerson = friends[i];
-                console.log(comparePerson);
                 let personValCompare = 0;
                 for (let o = 0; o < 10; o ++) {
                     let returnVal = Math.abs(

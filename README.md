@@ -19,17 +19,10 @@ This app was created as a homework assignment for the UNCH Coding Bootcamp in we
 
 ###Use
 
-#####Standard
+1. The home page provides a link to the survey and the footer link to the api.
 
-1. The home page provides a link to the survey.
+2. The survey requires the name and data inputs from the user.
 
-2. The survey 
+3. The data inputs are then compared with an array of 'friends'.
 
-#####Manager
-![Run Program and Select an Action](assets/gifs/manager.gif)
-1. Use the command prompt navigated to the root folder to run `node bamazonManager.js`.
-
-2. This app utilizes node Inquirer to request user input. Initial user input 
-directs the program to run one of four functions.
-
-3. The manager may view products for sale, view low inventory products, add stock to any item already in the store, and/or add a new product.
+4. The friend which most closely matches the user inputs is returned as a modal pop-up.
